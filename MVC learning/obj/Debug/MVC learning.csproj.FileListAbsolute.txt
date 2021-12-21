@@ -1,0 +1,72 @@
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\MVC learning.dll.config
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\MVC learning.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\MVC learning.pdb
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\csc.exe
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\csc.exe.config
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\csc.rsp
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\csi.exe
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\csi.exe.config
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\csi.rsp
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.Managed.Core.targets
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.AppContext.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Collections.Immutable.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Console.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Globalization.Calendars.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.IO.Compression.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.IO.FileSystem.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Net.Http.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Net.Sockets.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Reflection.Metadata.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.ValueTuple.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Xml.XmlDocument.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Xml.XPath.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\vbc.exe
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\vbc.exe.config
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\vbc.rsp
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\VBCSCompiler.exe
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\roslyn\VBCSCompiler.exe.config
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\Microsoft.Web.Infrastructure.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Helpers.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Mvc.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Razor.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Webpages.Deployment.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Webpages.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Webpages.Razor.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Razor.xml
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Webpages.xml
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Webpages.Deployment.xml
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Webpages.Razor.xml
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Helpers.xml
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\System.Web.Mvc.xml
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\obj\Debug\MVC learning.csproj.CoreCompileInputs.cache
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\obj\Debug\MVC learning.csproj.CopyComplete
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\obj\Debug\MVC learning.dll
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\obj\Debug\MVC learning.pdb
+E:\fornt-end\back-end\ASP.NET MVC 5\MVC learning\MVC learning\obj\Debug\MVC learning.csproj.AssemblyReference.cache
