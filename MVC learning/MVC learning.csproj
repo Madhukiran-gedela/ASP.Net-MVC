@@ -253,6 +253,7 @@
     <Content Include="Views\Account\IvalidLogin.cshtml" />
     <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\Home\Studentdetails.cshtml" />
+    <Content Include="Views\Home\Requestexample.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

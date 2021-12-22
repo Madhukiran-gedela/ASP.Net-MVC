@@ -28,6 +28,17 @@ namespace MVC_learning.Controllers
             ViewBag.StudentMarks = 100;
             return View();
         }
+        public ActionResult Requestexample()
+        {
+            ViewBag.url = Request.Url;
+            ViewBag.PhysicalApplicationPath = Request.PhysicalApplicationPath;
+            ViewBag.Path = Request.Path;
+            ViewBag.BrowserType = Request.Browser.Type;
+            ViewBag.Query = Request.QueryString["n"];
+            ViewBag.Headers= Request.Headers["Accept"];
+            ViewBag.HttpMethod= Request.HttpMethod;
+            return View();
+        }
         public ActionResult GetEmpName(int EmpId)
         {
             var Employees = new[]
