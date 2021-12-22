@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/shared/firstlayout.cshtml";
+}
+<h2>About</h2><br />
+@{ 
+    ViewBag.ListTitle = "Products";
+    ViewBag.Items = new List<string>() { "Apple", "Samusang", "One Plus" };
+    Html.RenderPartial("List");
+}
+
+@section SlidebarOptions
+{
+    <a href="#" class="list-group-item text-black" style="background-color:transparent">company </a>
+    <a href="#" class="list-group-item text-black" style="background-color:transparent">work</a>
+    <a href="#" class="list-group-item text-black" style="background-color:transparent">empolyees</a>
+}
+

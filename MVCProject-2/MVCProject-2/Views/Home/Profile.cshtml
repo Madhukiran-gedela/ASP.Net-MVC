@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/shared/firstlayout.cshtml";
+}
+
+<h2>YOUR PROFILE</h2>
+@{
+    ViewBag.Message = "Profile";
+}
+@{ 
+    ViewBag.ListTitle = "Details";
+    ViewBag.Items = new List<Object>
+    () { "Login","Username","password" };
+    Html.RenderPartial("List");
+}
+    @section SlidebarOptions
+{
+        <a href="#" class="list-group-item text-black" style="background-color:transparent">Login</a>
+        <a href="#" class="list-group-item text-black" style="background-color:transparent">Sign up</a>
+        <a href="#" class="list-group-item text-black" style="background-color:transparent">logout</a>
+    }
+

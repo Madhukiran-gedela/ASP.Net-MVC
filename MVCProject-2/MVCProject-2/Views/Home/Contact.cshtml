@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Contact</h2>
+@{ 
+    ViewBag.ListTitle = "Details";
+    ViewBag.Items = new List<Object>(){"phone : 123-223-3563","name : madhu","mail : kmiry@gmail.com"};
+    Html.RenderPartial("List");
+}
+
+@section SlidebarOptions
+{
+    <a href="#" class="list-group-item text-black" style="background-color:transparent">About company</a>
+    <a href="#" class="list-group-item text-black" style="background-color:transparent">Queries</a>
+    <a href="#" class="list-group-item text-black" style="background-color:transparent">List</a>
+}
