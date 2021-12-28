@@ -1,0 +1,49 @@
+﻿@model List<usingDB.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/_LayoutPage1.cshtml";
+}
+
+<h2>Products</h2>
+<table>
+    <form class="form-check-inline" action="/products/index">
+    <tr>
+        <td><label for="search">Search :</label></td>
+        <td><input type="search" class="form-control mr-1" id="search" name="search" placeholder="search" value="@ViewBag.search"></td>
+       <td><button type="submit" class="btn btn-outline-primary">GO</button></td>
+    </tr>
+    </form>
+</table>
+<br />
+<div class="container-fluid card-body" style="box-shadow">
+    <table class="table table-bordered">
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Date of Purchase</th>
+            <th>Availablity</th>
+            <th>Catagory ID</th>
+            <th>Brand ID</th>
+            <th>Active</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductID</td>
+                <td>@item.ProductName</td>
+                <td>@item.Price</td>
+                <td>@item.DateOfPurchase</td>
+                <td>@item.AvailabilityStatus</td>
+                <td>@item.CategoryID</td>
+                <td>@item.BrandID</td>
+                <td>@item.Active</td>
+                <td>
+                    <button class="btn btn-primary opacity-75">
+                        <a class="text-white" href="/products/details/@item.ProductID">Details</a>
+                    </button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
