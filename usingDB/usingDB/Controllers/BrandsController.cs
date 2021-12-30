@@ -11,9 +11,9 @@ namespace usingDB.Controllers
         // GET: Brands
         public ActionResult Index()
         {
-            EFDBFirstDatabaseEntities db = new EFDBFirstDatabaseEntities();
-            List<Brand> brands = db.Brands.ToList();
-            return View(brands);
+            CompanyDbContext db = new CompanyDbContext();
+            List<Brands>Brands = db.Brands.ToList();
+            return View(Brands);
         }
     }
 }

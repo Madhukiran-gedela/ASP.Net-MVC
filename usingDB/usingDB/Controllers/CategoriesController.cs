@@ -11,7 +11,7 @@ namespace usingDB.Controllers
         // GET: Categories
         public ActionResult Index()
         {
-            EFDBFirstDatabaseEntities db = new EFDBFirstDatabaseEntities();
+            CompanyDbContext db = new CompanyDbContext();
             List<Category> categories = db.Categories.ToList();
             return View(categories);
         }
