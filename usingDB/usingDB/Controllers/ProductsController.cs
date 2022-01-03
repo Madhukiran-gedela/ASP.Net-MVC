@@ -77,19 +77,28 @@ namespace usingDB.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(Product p)
+        public ActionResult Create([Bind(Include = "ProductID,ProductName,Price,DateOfPurchase,AvailabilityStatus,CategoryID,BrandID,Photo")] Product p)
         {
-            if (Request.Files.Count >=1)
+            if (ModelState.IsValid)
             {
-                var file = Request.Files[0];
-                var imageBytes = new Byte[file.ContentLength];
-                file.InputStream.Read(imageBytes, 0,file.ContentLength);
-                var base64String = Convert.ToBase64String(imageBytes, 0, imageBytes.Length);
-                p.Photo = base64String;
+                if (Request.Files.Count >= 1)
+                {
+                    var file = Request.Files[0];
+                    var imageBytes = new Byte[file.ContentLength];
+                    file.InputStream.Read(imageBytes, 0, file.ContentLength);
+                    var base64String = Convert.ToBase64String(imageBytes, 0, imageBytes.Length);
+                    p.Photo = base64String;
+                }
+                db.Products.Add(p);
+                db.SaveChanges();
+                return RedirectToAction("index");
             }
-            db.Products.Add(p);
-            db.SaveChanges();
-            return RedirectToAction("index");
+            else
+            {
+                ViewBag.Category = db.Categories.ToList();
+                ViewBag.Brands = db.Brands.ToList();
+                return View();
+            }
         }
         public ActionResult Edit(long id)
         {

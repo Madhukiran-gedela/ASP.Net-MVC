@@ -9,11 +9,15 @@
     <form class="form-check-inline" action="/products/index">
 <table>
     <tr>
-        <td><label for="search"><strong>Search :</strong></label></td>
-        <td><input type="search" class="form-control mr-1" id="search" name="search" placeholder="search" value="@ViewBag.search"></td>
-       <td><button type="submit" class="btn btn-outline-primary">GO</button></td>
-        <td><a class="btn btn-danger col-md-12 text-white-10" href="/products/create">
-            Create</a>
+        <td>@Html.Label("Search", new {@class= "mr-1" })</td>
+        <td>@Html.TextBox("Search", ViewBag.search as string, new { @class = "form-control-1", placeholder = "search" })</td>
+        @*<td><label for="search"><strong>Search :</strong></label></td>*@
+        @*<td><input type="search" class="form-control mr-1" id="search" name="search" placeholder="search" value="@ViewBag.search"></td>*@
+        <td><button type="submit" class="btn btn-outline-primary">GO</button></td>
+        <td>
+            <a class="btn btn-danger col-md-12 text-white-10" href="/products/create">
+                Create
+            </a>
         </td>
     </tr>
 </table>
@@ -182,11 +186,11 @@
         {
             <tr>
                 <td><img src="data:image;base64,@item.Photo" style="width:100px" /></td>
-                <td>@item.ProductID</td>
-                <td>@item.ProductName</td>
-                <td>@item.Price</td>
-                <td>@item.DateOfPurchase</td>
-                <td>@item.AvailabilityStatus</td>
+                <td>@Html.DisplayFor(temp => item.ProductID)</td>
+                <td>@Html.DisplayFor(temp => item.ProductName)</td>
+                <td>@Html.DisplayFor(temp => item.Price)</td>
+                <td>@Html.DisplayFor(temp => item.DateOfPurchase)</td>
+                <td>@Html.DisplayFor(temp => item.AvailabilityStatus)</td>
                 <td>
                     @if(item.Category !=null)
                 {
@@ -202,18 +206,21 @@
             </td>
                 <td>@item.Active</td>
                 <td>
-                   <button type="button" class="btn btn-info opacity-75 btn-sm ">
-                        <a class="text-white" href="/products/details/@item.ProductID">Details</a>
+                   <button type="button" class="btn btn-info btn-sm ">
+                       @Html.ActionLink("Details", "Details", new {id = item.ProductID,Controller = "Products"})
+                        @*<a class="text-white" href="/products/details/@item.ProductID">Details</a>*@
                         </button>
                     </td>
                 <td>
-                    <button class="btn btn-warning opacity-75 btn-sm">
-                        <a class="text-white" href="/products/edit/@item.ProductID">Edit</a>
+                    <button class="btn btn-warning  btn-sm">
+                        @Html.ActionLink("edit", "edit", new {id = item.ProductID,Controller = "Products"})
+                        @*<a class="text-white" href="/products/edit/@item.ProductID">Edit</a>*@
                     </button>
                 </td>
                 <td>
-                    <button class="btn btn-danger opacity-75 btn-sm">
-                        <a class="text-white"href="/products/delete/@item.ProductID">Delete</a>
+                    <button class="btn btn-danger btn-sm">
+                        @Html.ActionLink("Delete", "delete", new { id = item.ProductID, Controller = "Products"})
+                        @*<a class="text-white"href="/products/delete/@item.ProductID">Delete</a>*@
                     </button>
                 </td>
                 </tr>
