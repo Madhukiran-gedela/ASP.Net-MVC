@@ -1,0 +1,48 @@
+﻿@model usingDB.viewmodel.Registionviewmodel
+
+@{
+    ViewBag.Title = "Register";
+    //Layout = "~/Views/shared/_LayoutPage1.cshtml";
+}
+
+<h2 style="margin:5px">Register</h2>
+@using(Html.BeginForm("Register","Account",FormMethod.Post))
+            {
+<div class="container w-50 shadow-lg p-3 mb-5 bg-body rounded">
+ <div class="container-fluid form-row col-7">
+    <div class="form-group col-md-12 m-1">
+        <strong> @Html.LabelFor(temp => temp.Username) :</strong>
+        @Html.TextBoxFor(temp => temp.Username, new { placeholder = "username", @class = "form-control" })
+        @Html.ValidationMessageFor(temp => temp.Username)
+    </div>
+    <div class="form-group col-md-12 m-1">
+       <strong> @Html.LabelFor(temp => temp.Email) :</strong>
+        @Html.TextBoxFor(temp => temp.Email, new { placeholder = "enter your mail", @class = "form-control" })
+        @Html.ValidationMessageFor(temp => temp.Email)
+    </div>
+    <div class="form-group col-md-12 m-1">
+        <strong>@Html.LabelFor(temp => temp.Password) :</strong>
+        @Html.PasswordFor(temp => temp.Password, new { placeholder = "enter your password", @class = "form-control" })
+        @Html.ValidationMessageFor(temp => temp.Password)
+    </div>
+    <div class="form-group col-md-12 m-1">
+        <strong>@Html.LabelFor(temp => temp.ConfirmPassword) :</strong>
+        @Html.PasswordFor(temp => temp.ConfirmPassword, new { placeholder = "enter your password", @class = "form-control" })
+        @Html.ValidationMessageFor(temp => temp.ConfirmPassword)
+    </div>
+    <div class="form-group col-md-12 m-1">
+        <strong>@Html.LabelFor(temp => temp.DateofBirth) :</strong>
+        @Html.TextBoxFor(temp => temp.DateofBirth, new { placeholder = "dd-mm-yyyy", Type = "Date", @class = "form-control" })
+        @Html.ValidationMessageFor(temp => temp.DateofBirth)
+    </div>
+    <div class="form-group col-md-12 m-1">
+    <strong>@Html.LabelFor(temp => temp.MobileNumber) :</strong>
+        @Html.TextBoxFor(temp => temp.MobileNumber, new { placeholder = "00000000", Type = "Tel", @class = "form-control" })
+        @Html.ValidationMessageFor(temp => temp.MobileNumber)
+    </div>
+     @Html.ValidationSummary()
+    <br />
+    <button type="submit" class="btn btn-success col-md-12">Register</button>
+     </div>
+</div>
+    }

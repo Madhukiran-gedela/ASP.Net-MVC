@@ -12,7 +12,8 @@ namespace usingDB.Htmlhelper
         {
             TagBuilder tag = new TagBuilder("input");
             tag.MergeAttribute("type", "file");
-            tag.MergeAttribute("id", "Image");
+            tag.MergeAttribute("id", "image");
+            tag.MergeAttribute("name", "Photo");
             tag.MergeAttribute("class", CssClassname);
             return MvcHtmlString.Create(tag.ToString(TagRenderMode.SelfClosing));
         }

@@ -19,7 +19,7 @@ namespace usingDB.Models
         public string ProductName { get; set; }
         [Display(Name = "Price")]
         [Required(ErrorMessage = "Please enter the vaild Price")]
-        [Range(0,100000,ErrorMessage ="price sholud between 0 to 1000")]
+        [Range(0,10000000,ErrorMessage ="price sholud between 0 to 1000000")]
         [diviableby10(ErrorMessage ="should be multiple of 10")]
         public Nullable<decimal> Price { get; set; }
         [Display(Name = "DateOfPurchase")]
@@ -30,13 +30,13 @@ namespace usingDB.Models
         public string AvailabilityStatus { get; set; }
         [Display(Name = "CategoryID")]
         [Required(ErrorMessage = "Please Choose the vaild Category")]
-        public Nullable<long> CategoryID { get; set; }
+        public long CategoryID { get; set; }
 
         [Display(Name = "BrandID")]
         [Required(ErrorMessage = "Please choose the Brand")]
-        public Nullable<long> BrandID { get; set; }
+        public long BrandID { get; set; }
         [Display(Name = "Active")]
-        public Nullable<bool> Active { get; set; }
+        public bool Active { get; set; }
         [Display(Name = "Photo")]
         public string Photo { get; set; }
         public Nullable<decimal> Quantity { get; set; }

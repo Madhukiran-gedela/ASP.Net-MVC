@@ -1,0 +1,28 @@
+﻿@model usingDB.Identity.ApplicationUser
+@{
+    ViewBag.Title = "MyProfile";
+    //Layout = "~/Views/shared/_LayoutPage1.cshtml";
+}
+
+<div class="container-fluid mt-5 shadow p-3 mb-5 bg-white rounded">
+<h2 style="margin-bottom:2%">MyProfile</h2>
+    <table class="table table-bordered table-hover ">
+        <tr>
+            <th>Username</th>
+            <td>@Model.UserName</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <th>Brithday</th>
+            <td>@Model.Birthday</td>
+        </tr>
+        <tr>
+            <th>Phone Number</th>
+            <td>@Model.PhoneNumber</td>
+        </tr>
+    </table>
+</div>
+<a href="/home/index">Back</a>

@@ -1,0 +1,35 @@
+﻿@model usingDB.Models.Product   
+    @{
+      Layout = "~/Areas/Manager/Views/Shared/ManagerLayoutPage1.cshtml";
+    }
+
+    <h2>ProductDetails</h2>
+    <table class="table">
+        <tr>
+            <th>ProductID</th>
+            <td>@Model.ProductID</td>
+        </tr>
+        <tr>
+            <th>ProductName</th>
+            <td>@Model.ProductName</td>
+        </tr>
+        <tr>
+            <th>ProductPrice</th>
+            <td>@Model.Price</td>
+        </tr>
+        <tr>
+            <th>Date of purchase</th>
+            <td>@Model.DateOfPurchase.Value.ToString("dd/MM/yyyy")</td>
+        </tr>
+        <tr>
+            <th>Brand</th>
+            <td>@Model.Brand</td>
+        </tr>
+        <tr>
+            <th>ProductAvailability</th>
+            <td>@Model.AvailabilityStatus</td>
+        </tr>
+    </table>
+    <button class="btn btn-info">
+        <a class="text-white"href="/Manager/Products/index">back to Products</a>
+    </button>

@@ -26,35 +26,39 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/Home/index">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Categories/index">Categories</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Brands/index">Brands</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Products/index">Products</a>
-                </li>
+                @if (User.Identity.IsAuthenticated == false)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Products/Index">Products</a>
+                    </li>
+                }
+                @if (User.Identity.IsAuthenticated == true)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/MyProfile">MyProfile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Logout">Logout</a>
+                    </li>
+                }
             </ul>
         </div>
-        <div class="col-4 text-white">
-            @ViewBag.Message
+        @if (User.Identity.IsAuthenticated == true)
+        {
+        <div class="text-white">
+            Welcome to  @User.Identity.Name
+            @*@ViewBag.Message*@
         </div>
+        }
     </nav>
     <div class="container-fluid">
-        @*<div class="row">
-            <div class="col-2" style="background-color:lightgray; height:1000px">
-                <div class="list-group">
-                    <a href="#" class="list-group-item text-black" style="background-color:transparent">Favourites</a>
-                    <a href="#" class="list-group-item text-black" style="background-color:transparent">Products</a>
-                    <a href="#" class="list-group-item text-black" style="background-color:transparent">Your Order</a>
-                    @RenderSection("SlideBarOptions", required: false)
-                </div>
-            </div>
-            <div class="col-10">*@
                 @RenderBody()
-            </div>
-        @*</div>
-    </div>*@
+     </div>
 </body>
 </html>

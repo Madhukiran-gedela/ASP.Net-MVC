@@ -1,0 +1,25 @@
+﻿@model List<usingDB.Identity.ApplicationUser> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/admin_LayoutPage1.cshtml";
+}
+
+<h2>Users</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Date of birth</th>
+        <th>Mobile</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+            <td>@item.Birthday</td>
+            <td>@item.PhoneNumber</td>
+            <td><a href="/Admin/Users/Delete?id=@item.Id" class="btn btn-danger">Delete</a></td>
+        </tr>
+    }
+</table>
