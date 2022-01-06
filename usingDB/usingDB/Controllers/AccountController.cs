@@ -16,6 +16,7 @@ namespace usingDB.Controllers
     public class AccountController : Controller
     {
         // GET: Account
+        [ActionName("Register")]
         public ActionResult Register()
         {
             return View();
@@ -38,9 +39,10 @@ namespace usingDB.Controllers
                     //role
                     userManager.AddToRole(user.Id, "Employee");
                     //login
-                    var authenticationManager = HttpContext.GetOwinContext().Authentication;
-                    var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
-                    authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
+                    this.LoginUser(userManager, user);
+                    //var authenticationManager = HttpContext.GetOwinContext().Authentication;
+                    //var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                    //authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
                 }
                 return RedirectToAction("Index", "Home");
             }
@@ -67,9 +69,10 @@ namespace usingDB.Controllers
                 if (user != null)
                 {
                 //login
-                    var authenticationManager = HttpContext.GetOwinContext().Authentication;
-                    var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
-                    authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
+                this.LoginUser(userManager, user);
+                //var authenticationManager = HttpContext.GetOwinContext().Authentication;
+                //var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                //authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
                 if (userManager.IsInRole(user.Id,"Admin"))
                 {
 
@@ -90,6 +93,13 @@ namespace usingDB.Controllers
                     ModelState.AddModelError("myerror", "invalid username or password");
             return View();
                 }
+        }
+        [NonAction]
+        public void LoginUser(ApplicationUserManager userManager,ApplicationUser user)
+        {
+            var authenticationManager = HttpContext.GetOwinContext().Authentication;
+            var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+            authenticationManager.SignIn(new AuthenticationProperties(), userIdentity);
         }
         //GET : LogOut
         public ActionResult logout()

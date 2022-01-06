@@ -1,11 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using usingDB.Identity;
+using usingDB.Fliters;
 namespace usingDB.Areas.Admin.Controllers
 {
+    [AdminFliter]
     public class UsersController : Controller
     {
         // GET: Admin/Users
@@ -19,10 +22,15 @@ namespace usingDB.Areas.Admin.Controllers
         public ActionResult Delete(string id)
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            ApplicationUser users = db.Users.ToList().Where(temp => temp.Id == id).FirstOrDefault();
-            db.Users.Remove(users);
-            db.SaveChanges();
+            ApplicationUserStore use = new ApplicationUserStore(db);
+            ApplicationUserManager manager = new ApplicationUserManager(use);
+            ApplicationUser users = manager.Users.Where(temp => temp.Id == id).FirstOrDefault();
+            var change = manager.Delete(users);
+            if (change.Succeeded)
+            {
             return RedirectToAction("Index", "Users");
+            }
+            return View();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace usingDB
             if (userManager.FindByName("admin")==null)
             {
                 var user = new ApplicationUser();
-                user.UserName = "admin1";
+                user.UserName = "admin";
                 user.Email = "admin@gmail.com";
                 string userPassword = "admin123";
                 var chkUser = userManager.Create(user, userPassword);  
