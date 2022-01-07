@@ -14,6 +14,7 @@ namespace usingDB.Controllers
         [OutputCache(Duration =60)]
         public ActionResult Index()
         {
+            throw new Exception("some Expection for testing purpose");
             return View();
         }
     }

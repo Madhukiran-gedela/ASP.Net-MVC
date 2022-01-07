@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Company.DomainModels.CustomValidations;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using usingDB.validations;
-namespace usingDB.Models
+namespace Company.DomainModels
 {
-    [Table("Products",Schema ="dbo")]
+    [Table("Products", Schema = "dbo")]
     public class Product
     {
         [Key]
@@ -15,12 +12,12 @@ namespace usingDB.Models
         [Required]
         public long ProductID { get; set; }
         [Display(Name = "ProductName")]
-        [Required(ErrorMessage ="Please enter the vaild Name")]
+        [Required(ErrorMessage = "Please enter the vaild Name")]
         public string ProductName { get; set; }
         [Display(Name = "Price")]
         [Required(ErrorMessage = "Please enter the vaild Price")]
-        [Range(0,10000000,ErrorMessage ="price sholud between 0 to 1000000")]
-        [diviableby10(ErrorMessage ="should be multiple of 10")]
+        [Range(0, 10000000, ErrorMessage = "price sholud between 0 to 1000000")]
+        [diviableby10(ErrorMessage = "should be multiple of 10")]
         public Nullable<decimal> Price { get; set; }
         [Display(Name = "DateOfPurchase")]
         [Required(ErrorMessage = "Please enter the Date")]

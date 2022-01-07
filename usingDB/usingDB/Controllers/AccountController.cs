@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using usingDB.Models;
+using Company.DomainModels;
 using usingDB.viewmodel;
 using usingDB.Identity;
 using System.Web.Helpers;

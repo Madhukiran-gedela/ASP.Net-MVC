@@ -51,6 +51,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Grpc.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.2.43.0\lib\net45\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.Api.2.43.0\lib\net45\Grpc.Core.Api.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -81,6 +87,15 @@
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -147,6 +162,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Error.html" />
+    <Content Include="Error404.html" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -320,26 +336,8 @@
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
     <Compile Include="Identity\ApplicationUserStore.cs" />
-    <Compile Include="Migrations\202201040538052_updated.cs" />
-    <Compile Include="Migrations\202201040538052_updated.Designer.cs">
-      <DependentUpon>202201040538052_updated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202201040543457_UP.cs" />
-    <Compile Include="Migrations\202201040543457_UP.Designer.cs">
-      <DependentUpon>202201040543457_UP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202201050950133_RemovingNullColumns.cs" />
-    <Compile Include="Migrations\202201050950133_RemovingNullColumns.Designer.cs">
-      <DependentUpon>202201050950133_RemovingNullColumns.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Brands.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\CompanyDbContext.cs" />
-    <Compile Include="Models\Products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="validations\diviableby10.cs" />
     <Compile Include="viewmodel\Loginform.cs" />
     <Compile Include="viewmodel\Registionviewmodel.cs" />
   </ItemGroup>
@@ -377,6 +375,7 @@
     <Content Include="Views\_viewstart.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\shared\Product.cshtml" />
+    <Content Include="Views\shared\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -403,15 +402,24 @@
     <EmbeddedResource Include="IdentityMigrations\202201040635566_CountryColumn.resx">
       <DependentUpon>202201040635566_CountryColumn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202201040538052_updated.resx">
-      <DependentUpon>202201040538052_updated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202201040543457_UP.resx">
-      <DependentUpon>202201040543457_UP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202201050950133_RemovingNullColumns.resx">
-      <DependentUpon>202201050950133_RemovingNullColumns.cs</DependentUpon>
-    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Company.DataLayer\Company.DataLayer.csproj">
+      <Project>{ac2345f5-2af9-4601-9688-bf6b352b6b9b}</Project>
+      <Name>Company.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Company.DomainModels\Company.DomainModels.csproj">
+      <Project>{b47186a5-c6c0-435e-acda-ca67ff64bd1e}</Project>
+      <Name>Company.DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Company.ServiceContacts\Company.ServiceContacts.csproj">
+      <Project>{07a6017c-a33d-457b-b12c-7d6823bb25d4}</Project>
+      <Name>Company.ServiceContacts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Company.ServiceLayer\Company.ServiceLayer.csproj">
+      <Project>{bae34aae-5849-4ca5-8334-6b2798d7871b}</Project>
+      <Name>Company.ServiceLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -444,7 +452,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Grpc.Core.2.43.0\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.2.43.0\build\net45\Grpc.Core.targets'))" />
   </Target>
+  <Import Project="..\packages\Grpc.Core.2.43.0\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.43.0\build\net45\Grpc.Core.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

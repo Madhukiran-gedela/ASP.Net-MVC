@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,6 +16,15 @@ namespace usingDB
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             GobalFilters.RegisterGobalFilters(GlobalFilters.Filters);
+        }
+        protected void Application_Error()
+        {
+            Exception exp = Server.GetLastError();
+            string s = "Message:" + exp.Message + " , Type" + exp.GetType().ToString() + ", Source" + exp.Source;
+            StreamWriter sw = File.AppendText(HttpContext.Current.Request.PhysicalApplicationPath + "\\ErrorLog.txt");
+            sw.WriteLine(s);
+            sw.Close();
+            Response.Redirect("Error.html");
         }
     }
 }

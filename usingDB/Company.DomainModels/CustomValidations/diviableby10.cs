@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-namespace usingDB.validations
+namespace Company.DomainModels.CustomValidations
 {
     public class diviableby10 : ValidationAttribute
     {

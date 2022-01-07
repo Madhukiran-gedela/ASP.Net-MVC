@@ -3,20 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using usingDB.Models;
+using Company.DataLayer;
+using Company.DomainModels;
 using usingDB.Fliters;
+using Company.ServiceContacts;
+using Company.ServiceLayer;
 namespace usingDB.Areas.Admin.Controllers
 {
     [AdminFliter]
     public class ProductsController : Controller
     {
-        CompanyDbContext db = new CompanyDbContext();
+        CompanyDbContext db;
+        IProductService prodService;
+        //CompanyDbContext db = new CompanyDbContext();
+        public ProductsController()
+        {
+            this.db = new CompanyDbContext();
+            this.prodService = new ProductServices();
+        }
         // GET: Admin/Products
         public ActionResult Index(string search = "", string SortColumn = "ProductID", string IconClass = "fa-sort-asc", int PageNo = 1)
         {
             CompanyDbContext db = new CompanyDbContext();
             ViewBag.search = search;
-            List<Product> products = db.Products.Where(temp => temp.ProductName.Contains(search)).ToList();
+            //List<Product> products = db.Products.Where(temp => temp.ProductName.Contains(search)).ToList();
+            List<Product> products = prodService.SearchProducts(search);
             //sorting
             ViewBag.SortColumn = SortColumn;
             ViewBag.IconClass = IconClass;
@@ -66,8 +77,9 @@ namespace usingDB.Areas.Admin.Controllers
         }
         public ActionResult Details(long id)
         {
-            CompanyDbContext db = new CompanyDbContext();
-            Product p = db.Products.Where(temp => temp.ProductID == id).FirstOrDefault();
+            Product p = prodService.GetProductByProductID(id); 
+            //CompanyDbContext db = new CompanyDbContext();
+            //Product p = db.Products.Where(temp => temp.ProductID == id).FirstOrDefault();
             return View(p);
         }
         public ActionResult Create()
@@ -78,6 +90,7 @@ namespace usingDB.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ProductID,ProductName,Price,DateOfPurchase,AvailabilityStatus,CategoryID,BrandID,Photo")] Product p)
         {
             if (ModelState.IsValid)
@@ -90,8 +103,9 @@ namespace usingDB.Areas.Admin.Controllers
                     var base64String = Convert.ToBase64String(imageBytes, 0, imageBytes.Length);
                     p.Photo = base64String;
                 }
-                db.Products.Add(p);
-                db.SaveChanges();
+                prodService.InsertProduct(p);
+                //db.Products.Add(p);
+                //db.SaveChanges();
                 return RedirectToAction("index");
             }
             else
@@ -103,8 +117,9 @@ namespace usingDB.Areas.Admin.Controllers
         }
         public ActionResult Edit(long id)
         {
-            CompanyDbContext db = new CompanyDbContext();
-            Product p = db.Products.Where(temp => temp.ProductID == id).FirstOrDefault();
+            //CompanyDbContext db = new CompanyDbContext();
+            //Product p = db.Products.Where(temp => temp.ProductID == id).FirstOrDefault();
+            Product p = prodService.GetProductByProductID(id);
             ViewBag.Category = db.Categories.ToList();
             ViewBag.Brands = db.Brands.ToList();
             return View(p);
@@ -131,22 +146,25 @@ namespace usingDB.Areas.Admin.Controllers
             p.Price = E.Price;
             p.Active = E.Active;
             p.Photo = E.Photo;
-            db.SaveChanges();
+                prodService.UpdateProduct(p);
+            //db.SaveChanges();
             }
             return RedirectToAction("Index", "Products");
         }
         public ActionResult Delete(long id)
         {
 
-            Product p = db.Products.Where(temp => temp.ProductID == id).FirstOrDefault();
+            //Product p = db.Products.Where(temp => temp.ProductID == id).FirstOrDefault();
+            Product p = prodService.GetProductByProductID(id);
             return View(p);
         }
         [HttpPost]
         public ActionResult Delete(long id, Product D)
         {
-            Product p = db.Products.Where(temp => temp.ProductID == id).FirstOrDefault();
-            db.Products.Remove(p);
-            db.SaveChanges();
+            //Product p = db.Products.Where(temp => temp.ProductID == id).FirstOrDefault();
+            //db.Products.Remove(p);
+            //db.SaveChanges();
+            prodService.DeleteProduct(id);
             return RedirectToAction("Index", "Products");
         }
     }

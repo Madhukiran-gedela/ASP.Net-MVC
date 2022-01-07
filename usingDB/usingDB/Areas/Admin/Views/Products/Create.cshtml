@@ -1,4 +1,4 @@
-﻿@model usingDB.Models.Product
+﻿@model Company.DomainModels.Product
 @using usingDB.Htmlhelper
 @{
     ViewBag.Title = "Create";
@@ -10,6 +10,7 @@
     <h2>Create a product</h2>
     @using (Html.BeginForm("Create", "Products",new { area = "Admin" }, FormMethod.Post, new { enctype = "multipart/form-data" ,@class = "container-fulid shadow p-3 mb-5 bg-white rounded" }))
     {
+        @Html.AntiForgeryToken();
         <div class="row">
             <div class="form-group col-6">
                 @Html.LabelFor(temp => temp.ProductID)

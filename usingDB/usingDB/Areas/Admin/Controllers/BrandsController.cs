@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using usingDB.Models;
+using Company.DomainModels;
+using Company.DataLayer;
 using usingDB.Fliters;
 namespace usingDB.Areas.Admin.Controllers
 {
