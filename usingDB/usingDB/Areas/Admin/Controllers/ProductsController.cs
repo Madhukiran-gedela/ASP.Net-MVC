@@ -16,10 +16,11 @@ namespace usingDB.Areas.Admin.Controllers
         CompanyDbContext db;
         IProductService prodService;
         //CompanyDbContext db = new CompanyDbContext();
-        public ProductsController()
+        public ProductsController(IProductService pService)
         {
             this.db = new CompanyDbContext();
-            this.prodService = new ProductServices();
+            this.prodService = pService;
+            //this.prodService = new ProductServices();
         }
         // GET: Admin/Products
         public ActionResult Index(string search = "", string SortColumn = "ProductID", string IconClass = "fa-sort-asc", int PageNo = 1)

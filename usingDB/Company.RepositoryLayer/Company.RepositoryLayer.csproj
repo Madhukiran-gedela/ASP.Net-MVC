@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BAE34AAE-5849-4CA5-8334-6B2798D7871B}</ProjectGuid>
+    <ProjectGuid>{D9A8D4DA-C4A1-448E-B55B-5223314C2A5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Company.ServiceLayer</RootNamespace>
-    <AssemblyName>Company.ServiceLayer</AssemblyName>
+    <RootNamespace>Company.RepositoryLayer</RootNamespace>
+    <AssemblyName>Company.RepositoryLayer</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProductsServices.cs" />
+    <Compile Include="ProductsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,17 +63,9 @@
       <Project>{b47186a5-c6c0-435e-acda-ca67ff64bd1e}</Project>
       <Name>Company.DomainModels</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Company.RepositoryLayer\Company.RepositoryLayer.csproj">
-      <Project>{d9a8d4da-c4a1-448e-b55b-5223314c2a5c}</Project>
-      <Name>Company.RepositoryLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Company.ReprositoryContacts\Company.ReprositoryContacts.csproj">
       <Project>{7cefbc00-08d1-4f99-97b6-e6ae4d37b96e}</Project>
       <Name>Company.ReprositoryContacts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Company.ServiceContacts\Company.ServiceContacts.csproj">
-      <Project>{07a6017c-a33d-457b-b12c-7d6823bb25d4}</Project>
-      <Name>Company.ServiceContacts</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

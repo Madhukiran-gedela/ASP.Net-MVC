@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.ServiceLayer", "Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.ServiceContacts", "Company.ServiceContacts\Company.ServiceContacts.csproj", "{07A6017C-A33D-457B-B12C-7D6823BB25D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.ReprositoryContacts", "Company.ReprositoryContacts\Company.ReprositoryContacts.csproj", "{7CEFBC00-08D1-4F99-97B6-E6AE4D37B96E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.RepositoryLayer", "Company.RepositoryLayer\Company.RepositoryLayer.csproj", "{D9A8D4DA-C4A1-448E-B55B-5223314C2A5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{07A6017C-A33D-457B-B12C-7D6823BB25D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07A6017C-A33D-457B-B12C-7D6823BB25D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07A6017C-A33D-457B-B12C-7D6823BB25D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CEFBC00-08D1-4F99-97B6-E6AE4D37B96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CEFBC00-08D1-4F99-97B6-E6AE4D37B96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CEFBC00-08D1-4F99-97B6-E6AE4D37B96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CEFBC00-08D1-4F99-97B6-E6AE4D37B96E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9A8D4DA-C4A1-448E-B55B-5223314C2A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9A8D4DA-C4A1-448E-B55B-5223314C2A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9A8D4DA-C4A1-448E-B55B-5223314C2A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9A8D4DA-C4A1-448E-B55B-5223314C2A5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
