@@ -14,9 +14,10 @@ namespace usingDB.Areas.Admin.Controllers
         // GET: Admin/Brands
         public ActionResult Index()
         {
-            CompanyDbContext db = new CompanyDbContext();
-            List<Brands> Brands = db.Brands.ToList();
-            return View(Brands);
+            //CompanyDbContext db = new CompanyDbContext();
+            //List<Brands> Brands = db.Brands.ToList();
+            //return View(Brands);
+            return View();
         }
     }
 }

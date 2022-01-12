@@ -1,4 +1,4 @@
-﻿@model List<Company.DomainModels.Product>
+﻿@*@model List<Company.DomainModels.Product>*@
 
 @{
     ViewBag.Title = "Index";
@@ -6,16 +6,72 @@
 }
 
 <h2>Brands</h2>
-<table class="table">
+<button type="button" id="btnGetBrands">Get Brands</button>
+<table class="table brandsTable">
     <tr>
         <th>Brand ID</th>
         <th>Brand Name</th>
     </tr>
-    @foreach (var item in Model)
+</table>
+<div class="modal" id="ViewBrandModel" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td>BrandID</td>
+                        <td><span id="BrandIDSpan"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Brand Name</td>
+                        <td><span id="BrandNameDSpan"></span></td>
+                    </tr>
+                </table>
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+//const { type } = require("jquery")
+
+        $("#btnGetBrands").click(() => {
+            //console.log("HI")
+            $.ajax({
+                type: "GET", url: "/api/brands?brandid= " + bid, success: (response) =>
+                {
+                    $("#BrandIDSpan").html(response.BrandID);
+                    $("#BrandNameDSpan").html(response.BrandName);
+                    for (var i = 0; i < response.length; i++)
+                    {
+                        var br = response[i];
+                        var str = "<tr><td>" + (i + 1) + "</td><td>" + br.BrandName + "</td></tr> <button type = 'button' class='btn btn-info' ViewBrandButton' data-brandid=''"+ br.BrandID + "data-toggle='modal' data-target='#ViewBrandModel' > View</button ></td></tr>";
+                        $(".brandsTable").append(str);
+                    }
+                }, error: (err) =>
+                {
+                    alert(err);
+                    console.log(err);
+                }
+            });
+            $("#btnGetBrands").hide();
+        });
+        $(document).on("click", "ViewBrandButton", () =>
+        {
+          var bid =$(event.target).attr("data-brandid")
+        });
+    </script>
+    @*@foreach (var item in Model)
     {
         <tr>
             <td>@item.BrandID</td>
             <td>@item.BrandName</td>
         </tr>
-    }
-</table>
+    }*@

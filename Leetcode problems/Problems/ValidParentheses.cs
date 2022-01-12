@@ -10,14 +10,13 @@ namespace Problems
     {
         public bool Sol(string s)
         {
-            string s1 = "()";
-            if (s1 == "{()}")
+            if (s.Length % 2 != 0)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+
             }
         }
     }
