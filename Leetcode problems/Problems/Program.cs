@@ -6,8 +6,8 @@ namespace Problems
     {
         static void Main(string[] args)
         {
-            var V = new ValidParentheses();
-            Console.WriteLine(V.Sol("()"));
+            var V = new Solution();
+            Console.WriteLine(V.LongestCommonPrefix);
         }
     }
 }
