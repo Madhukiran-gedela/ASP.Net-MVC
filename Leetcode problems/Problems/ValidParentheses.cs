@@ -8,15 +8,18 @@ namespace Problems
 {
     public class ValidParentheses
     {
-        public bool Sol(string s)
+        public void Sol()
         {
-            if (s.Length % 2 != 0)
+          //  string[] s = new string[4];
+          //s[0] = "Madhu";
+          //s[1] = "kiran";
+          //s[2] = "yugi";
+          //s[3] = "jagadeesh";
+            for (int i = 1; i <= 20; i++)
             {
-                return false;
-            }
-            else
-            {
-                return true;
+                if (i % 2 == 1)
+                    continue;
+                Console.WriteLine(i);
             }
         }
     }

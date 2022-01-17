@@ -6,8 +6,14 @@ namespace Problems
     {
         static void Main(string[] args)
         {
-            var V = new Solution();
-            Console.WriteLine(V.LongestCommonPrefix);
+            //Solution S = new Solution();
+            //S.main();
+            //ValidParentheses V = new ValidParentheses();
+            //V.Sol();
+            //double_to_int D = new double_to_int();
+            //D.Madhu();
+            C_to_F C = new C_to_F();
+            C.Main();
         }
     }
 }
