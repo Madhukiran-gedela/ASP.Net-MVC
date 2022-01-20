@@ -16,7 +16,7 @@ namespace Problems
 
             return fTemp;
         }
-        public void Main()
+        public void Temp()
         {
             double celTemp = 0;
             double ferTemp = 0;

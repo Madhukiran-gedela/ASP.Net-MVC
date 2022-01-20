@@ -13,7 +13,7 @@ namespace Problems
             //double_to_int D = new double_to_int();
             //D.Madhu();
             C_to_F C = new C_to_F();
-            C.Main();
+            C.Temp();
         }
     }
 }

@@ -1,0 +1,29 @@
+//STUDENTS TABLE
+
+CREATE TABLE students(
+    students_id INT,
+    name Varchar(10),
+    branch Varchar(10),
+    PRIMARY KEY(students_id)
+);
+SELECT * FROM students;
+INSERT INTO students VALUES(1,'Madhu','CSE');
+INSERT INTO students VALUES(2,'kiran','CSE');
+INSERT INTO students VALUES(3,'jagadeesh','ECE');
+DESCRIBE students;
+
+//CUSTOMERS TABLE
+
+CREATE TABLE CUSTOMERS(
+   ID   INT              NOT NULL,
+   NAME VARCHAR (20)     NOT NULL,
+   AGE  INT              NOT NULL,
+   ADDRESS  CHAR (25) ,
+   SALARY   DECIMAL (18, 2),       
+   PRIMARY KEY (ID)
+);
+SELECT * FROM CUSTOMERS;
+INSERT INTO CUSTOMERS VALUES(1,'madhu','22','apple city','22000');
+INSERT INTO CUSTOMERS VALUES(2,'kiran','23','banana city','25000');
+INSERT INTO CUSTOMERS VALUES(3,'jagadeesh','25','pineapple city','23000');
+DESCRIBE CUSTOMERS;
