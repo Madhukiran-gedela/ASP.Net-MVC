@@ -1,0 +1,12 @@
+CREATE TABLE CUSTOMERS(
+   ID   INT              NOT NULL,
+   NAME VARCHAR (20)     NOT NULL,
+   AGE  INT              NOT NULL,
+   ADDRESS  CHAR (25) ,
+   SALARY   DECIMAL (18, 2),       
+   PRIMARY KEY (ID)
+);
+SELECT * FROM CUSTOMERS;
+INSERT INTO CUSTOMERS VALUES(101,'madhu','22','apple city','22000');
+INSERT INTO CUSTOMERS VALUES(102,'kiran','23','banana city','25000');
+INSERT INTO CUSTOMERS VALUES(103,'jagadeesh','25','pineapple city','23000');
