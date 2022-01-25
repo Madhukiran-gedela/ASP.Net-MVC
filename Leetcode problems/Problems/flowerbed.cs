@@ -8,9 +8,22 @@ namespace Problems
 {
     public class flowerbed
     {
-        public bool CanPlaceFlowers(int[] flowerbed, int n)
+       public void Zen()
         {
-            
+            int a = Convert.ToInt32(Console.ReadLine());
+            List<int> b = new List<int>();
+            for (int i = 0; i < input; i++)
+            {
+                string c = Console.ReadLine();
+                string[] data = c.Split(' ');
+                int First = Convert.ToInt32(data[0]);
+                int Secound = Convert.ToInt32(data[1]);
+                int Third = Convert.ToInt32(data[2]);
+                if (First > Secound)
+                {
+
+                }
+            }
         }
     }
 }
