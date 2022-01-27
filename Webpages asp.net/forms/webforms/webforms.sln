@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webforms", "webforms.csproj", "{59A3EBE9-7BE4-42C0-8815-0492C2157666}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectFee", "..\ProjectFee\ProjectFee.csproj", "{2DDD0CFD-6988-4C74-9A32-CC875DFB6CB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{59A3EBE9-7BE4-42C0-8815-0492C2157666}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59A3EBE9-7BE4-42C0-8815-0492C2157666}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59A3EBE9-7BE4-42C0-8815-0492C2157666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DDD0CFD-6988-4C74-9A32-CC875DFB6CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDD0CFD-6988-4C74-9A32-CC875DFB6CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDD0CFD-6988-4C74-9A32-CC875DFB6CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDD0CFD-6988-4C74-9A32-CC875DFB6CB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
