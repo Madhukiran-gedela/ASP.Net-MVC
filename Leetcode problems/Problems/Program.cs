@@ -12,8 +12,10 @@ namespace Problems
             //V.Sol();
             //double_to_int D = new double_to_int();
             //D.Madhu();
-            C_to_F C = new C_to_F();
-            C.Temp();
+            //C_to_F C = new C_to_F();
+            //C.Temp();
+            Notes A = new Notes();
+            A.Rupees();
         }
     }
 }
